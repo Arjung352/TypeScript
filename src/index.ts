@@ -43,6 +43,7 @@ console.log(checkAge(20));
 
 // Q4. sending a fucntion as an argument to another function
 
+/*
 function getDelayed(fn: (name: string) => void) {
   setTimeout(fn, 1000);
 }
@@ -50,3 +51,34 @@ function nameCall(name: string) {
   console.log(`Hello ${name}`);
 }
 getDelayed(() => nameCall("Arjun"));
+ */
+
+// like objects in js we have interfaces for typescipt
+// objects in js
+/*
+const user={
+  firstName:Arjun,
+  lastName:Gupta,
+  email:arjung7751@gmail.com,
+  age:20
+}
+  */
+
+// interface in ts
+interface user {
+  firstName: string;
+  lastName: string;
+  email: string;
+  age: number;
+}
+const greet = (user: user) => {
+  console.log(`Hello ${user.firstName} ${user.lastName}`);
+  console.log(`Youre email is-> ${user.email} and age is-> ${user.age}`);
+};
+const myUser: user = {
+  firstName: "Arjun",
+  lastName: "Gupta",
+  email: "arjung7751@gmail.com",
+  age: 20,
+};
+greet(myUser);
