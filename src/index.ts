@@ -10,6 +10,14 @@
 // Primitive data types:-
 // number,string,boolean,null,undifined,any
 
+// there are only number data type in ts there is no different data type in ts for integer and float
+
+// for example:-
+let number: number = 10;
+number = 10.6;
+number.toFixed;
+console.log(number);
+
 // Q1. A simple code to take a username from the user and printing it
 
 /*let name: string = "Arjun";
@@ -65,6 +73,7 @@ const user={
   */
 
 // interface in ts
+/*
 interface user {
   firstName: string;
   lastName: string;
@@ -82,3 +91,13 @@ const myUser: user = {
   age: 20,
 };
 greet(myUser);
+ */
+
+// we can also pass the default values in the function
+
+function dfault(name: string, email: string, marks: number = 40) {
+  console.log(name);
+  console.log(marks);
+  console.log(email);
+}
+dfault("Arjun", "arjung7751@gmail.com");
