@@ -13,10 +13,12 @@
 // there are only number data type in ts there is no different data type in ts for integer and float
 
 // for example:-
+/**
+ * 
 let number: number = 10;
 number = 10.6;
-number.toFixed;
 console.log(number);
+*/
 
 // Q1. A simple code to take a username from the user and printing it
 
@@ -95,9 +97,74 @@ greet(myUser);
 
 // we can also pass the default values in the function
 
-function dfault(name: string, email: string, marks: number = 40) {
+/*function dfault(name: string, email: string, marks: number = 40) {
   console.log(name);
   console.log(marks);
   console.log(email);
 }
 dfault("Arjun", "arjung7751@gmail.com");
+*/
+
+// we can also set the return type of a fucntion
+
+/*function returnType(name: string): string | boolean {
+  if (name == "Arjun") {
+    return name;
+  } else {
+    return false;
+  }
+}
+console.log(returnType("gupta"));
+*/
+
+// we can make our own return types using type aliasis
+// for example
+// here we've a function's with the parameter of a User type
+/*type User = {
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+const createUser = (user: User): void => {
+  console.log(user);
+};
+
+createUser({ name: "Arjun", email: "arjung7751@gmail.com", isActive: true });
+*/
+
+// we can make a type with readonly aswell as optional component and we can combine multiple types to create a new type
+
+/**
+type cardNumber = {
+  readonly cardnum: number;
+};
+type cardDate = {
+  cardate: number;
+};
+type cardDetail = cardNumber &
+  cardDate & {
+    cardHolderName?: string;
+    cvv: number;
+  };
+ */
+
+// arrays in ts
+// 1 way to create an array
+const arr: number[] = [];
+arr.push(1);
+console.log(arr);
+
+// 2nd way to create an array
+const numArr: Array<string> = [];
+numArr.push("Arjun", "Gupta");
+console.log(numArr);
+
+// 3rd way
+type User = {
+  name: string;
+  email: string;
+  age: number;
+};
+const objArr: User[] = [];
+objArr.push({ name: "Arjun", email: "arjung7751@gmail.com", age: 20 });
+console.log(objArr);
